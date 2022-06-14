@@ -15,7 +15,7 @@
     #define EXT 2
     #define FNC 3
     #define SYM2 4
-    #define ACCENT 5
+    #define NUMBERS 5
 // -----------------
 
 &mt {
@@ -52,7 +52,7 @@
         combo_accent {
             timeout-ms = <300>;
             key-positions = <32 33>;
-            bindings = <&mo ACCENT>;
+            bindings = <&mo NUMBERS>;
         };
         // combo into sym2 layer
         combo_sym2 {
@@ -101,14 +101,14 @@
             >;
 		};
 
-        // Numbers and high frequency symbols
+        //frequency symbols
         symbols {
             label = "SYM";
             bindings = <
                 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-                                &kp N1 &kp N2 &kp N3 &kp N4 &kp N5		                        &kp N6 &kp N7 &kp N8 &kp N9 &kp N0
-                &kp IT_LESS &kp IT_PERC &kp IT_LPAR &kp IT_LBRC &kp IT_LBKT     &kp EQUAL &kp QUESTION &kp IT_SQUOT &kp IT_MINUS &kp IT_AST
-                &kp IT_GREAT &kp IT_USD &kp IT_RPAR &kp IT_RBRC &kp IT_RBKT 	&kp IT_AT &kp IT_EXCL &kp IT_DQUOT &kp IT_PLUS &kp IT_FSLH
+                    &kp EXCL       &kp AT        &kp HASH      &kp DLLR      &kp PRCNT		   &kp CARET     &kp AMPS      &kp ASTRK     &kp UNDER      &kp SEMI
+                    &kp QUESTION   &kp GRAVE     &kp TILDE   &kp COMMA      &kp SLASH          &kp SQT        &kp DQT       &kp LBRC      &kp LPAR      &kp LBKT
+                    &kp PIPE       &kp MINUS     &kp EQUAL     &kp PLUS      &kp BSLH          &kp LT         &kp GT        &kp RBRC      &kp RPAR      &kp LBKT
                 // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
                                                                &mo FNC        &mo SYM2            &trans       &trans
                 //                                           ╰─────────────┴─────────────╯   ╰─────────────┴─────────────╯
@@ -146,12 +146,15 @@
 		};
 
         // Used to type regional accents.
-        accent_layer {
+        numbers_layer {
             bindings = <
-                &none &none &none &kp IT_CEGR &none                             &none &none &none &none &none 
-                &kp IT_AGRV &kp IT_IGRV &kp IT_OGRV &kp IT_EGRV &kp IT_EACU     &none &none &none &none &none
-                &none &none &none &kp IT_UGRV &none                             &none &none &none &none &none
-                                                                &none &none    &none &none 
+                // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+                    &none          &kp N7        &kp N8         &kp N9       &none             &none         &none         &none         &none         &none 
+                    &none          &kp N4        &kp N5         &kp N6       &none             &none         &none         &none         &none         &none
+                    &kp N0         &kp N1        &kp N2         &kp N3       &none             &none         &none         &none         &none         &none
+                // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
+                                                              &none         &none             &none         &none
+                //                                           ╰─────────────┴─────────────╯   ╰─────────────┴─────────────╯
             >;
 		};
 	};
