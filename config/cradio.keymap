@@ -71,9 +71,9 @@
         // Main modifiers and arrow keys
         ext_layer {
             bindings = <
-                &kp ESC  &trans &trans  &trans  &kp LC(B)     			        &kp PG_UP  &kp PG_DOWN &kp UP &kp END &kp CAPS
-                &sk LALT &sk LGUI  &sk LSHIFT  &sk LCTRL  &kp RALT 			&kp LEFT &kp DOWN &kp UP  &kp RIGHT   &kp DEL
-                &kp LC(Z)  &kp LC(X) &kp LC(C) &kp TAB   &kp LC(V)          &kp LC(BSPC) &kp BSPC &trans &trans  &trans
+                &kp ESC  &trans &trans  &trans  &kp LC(B)     			    &kp PG_UP &kp PG_DOWN &kp HOME &kp END &kp CAPS
+                &sk LALT &sk LGUI  &sk LSHIFT  &sk LCTRL  &kp RALT 			&kp LEFT &kp DOWN &kp UP &kp RIGHT &kp DEL
+                &kp LC(Z)  &kp LC(X) &kp LC(C) &kp TAB   &kp LC(V)          &kp LC(BSPC) &kp BSPC &kp LC(s) &trans  &trans
                                                   &trans &kp LCTRL          &kp ENTER  &mo FNC 
             >;
 		};
