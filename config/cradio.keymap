@@ -38,10 +38,6 @@
 
 / {
 
-    macros {
-        #include "macros.dtsi"
-    };
-
     combos {
         compatible = "zmk,combos";
         // combo into accent layer
