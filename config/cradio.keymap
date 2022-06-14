@@ -23,10 +23,6 @@
    // tapping_term_ms = <200>;
 };
 
-&sk {
-    ignore-modifiers;
-};
-
 #define SK(KEY) &nk KEY KEY
 // Keep sticky keys active for a long time so they effectively do not time out
 #define STICKY_KEY_TIMEOUT 60000
