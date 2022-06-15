@@ -49,10 +49,10 @@
     combos {
         compatible = "zmk,combos";
         // combo into Function layer
-        combo_func {
+        combo_fnc {
             timeout-ms = <300>;
             key-positions = <32 33>;
-            bindings = <&mo FUN>;
+            bindings = <&mo FNC>;
         };
         // combo into sym2 layer
         combo_sym2 {
