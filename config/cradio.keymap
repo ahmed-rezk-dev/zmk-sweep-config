@@ -33,7 +33,9 @@
 
 &caps_word {
   continue-list = <UNDERSCORE MINUS BACKSPACE>;
-};
+}; 
+
+CONFIG_ZMK_MOUSE=y
 
 /* KEY POSITIONS
   ╭───────────────────────╮          ╭───────────────────────╮
@@ -122,7 +124,7 @@
         ext_layer {
             bindings = <
                 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-                     &kp ESC       &trans       &trans          &trans        &kp LC(B)         &kp PG_DN    &kp PG_UP      &kp HOME      &kp END       &kp CAPS
+                     &kp ESC       &mkp LCLK       &trans          &mkp RCLK        &kp LC(B)         &kp PG_DN    &kp PG_UP      &kp HOME      &kp END       &kp CAPS
                      &kp TAB       &sk LGUI     &sk LALT        &sk LCTRL     &sk LCMD 		    &kp LEFT     &kp DOWN       &kp UP        &kp RIGHT     &kp DEL
                      &kp LC(Z)     &kp LC(X)    &kp LC(C)       &sk LSHIFT    &kp LC(V)         &kp LC(BSPC) &kp BSPC       &kp LC(S)     &trans        &trans
                 // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
