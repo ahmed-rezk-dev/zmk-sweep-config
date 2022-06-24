@@ -36,8 +36,7 @@ jobs:
             tools/
             zephyr/
             bootloader/
-            zmk/
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('manifest-dir/west.yml') }}
+          key: 4-${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('config/west.yml') }}
           restore-keys: |
             4-${{ runner.os }}-build-${{ env.cache-name }}-
             4-${{ runner.os }}-build-
@@ -56,14 +55,14 @@ jobs:
           SHIELD_ARG=
           ARTIFACT_NAME="${{ matrix.board }}"
           if [ -n "${{ matrix.shield }}" ]; then
-            SHIELD_ARG="-DSHIELD=${{ matrix.shield }}" 
+            SHIELD_ARG="-DSHIELD=${{ matrix.shield }}"
             ARTIFACT_NAME="${ARTIFACT_NAME}-${{ matrix.shield }}"
           fi
           ARTIFACT_NAME="${ARTIFACT_NAME}-zmk"
           echo ::set-output name=shield-arg::${SHIELD_ARG}
           echo ::set-output name=artifact-name::${ARTIFACT_NAME}
       - name: Build (west build)
-        run: west build --pristine -s zmk/app -b ${{ matrix.board }} -- ${{ steps.variables.outputs.shield-arg }} ${{ matrix.cmake-args }} -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
+        run: west build -s app -b ${{ matrix.board }} -- ${{ steps.variables.outputs.shield-arg }} ${{ matrix.cmake-args }}
       - name: Archive artifacts
         if: ${{ !matrix.skip-archive }}
         uses: actions/upload-artifact@v2
